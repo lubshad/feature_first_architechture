@@ -6,7 +6,10 @@ class NavigationController extends ChangeNotifier {
   static NavigationController get i => Get.find();
   Screens currentScreen = Screens.home;
 
-  void changeScreen(int value) {
+  void changeScreen(int value, BuildContext context) {
+    // if (value == currentScreen.index) {
+    //   Navigator.of(context).pop();
+    // }
     currentScreen = Screens.values[value];
     notifyListeners();
   }
